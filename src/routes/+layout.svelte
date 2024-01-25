@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { t, locale, locales } from '$lib/i18n/translator';
+
 	import { onMount } from 'svelte';
 	import '../app.postcss';
 
@@ -13,5 +15,9 @@
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
+
+<svelte:head>
+	<title>{$t('tab.title')}</title>
+</svelte:head>
 
 <slot />
