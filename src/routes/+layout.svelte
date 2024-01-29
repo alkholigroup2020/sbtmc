@@ -14,10 +14,14 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+	import { pageDirection } from '$lib/stores/index';
 </script>
 
 <svelte:head>
 	<title>{$t('tab.title')}</title>
 </svelte:head>
 
-<slot />
+<div dir={$pageDirection}>
+	<slot />
+</div>
