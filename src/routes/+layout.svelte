@@ -22,6 +22,6 @@
 	<title>{$t('tab.title')}</title>
 </svelte:head>
 
-<div dir={$pageDirection}>
+<div dir={$pageDirection} class="bg-secondary-50">
 	<slot />
 </div>
