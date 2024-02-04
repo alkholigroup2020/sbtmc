@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { currentAppLang } from '$lib/stores';
 	import { t, locale, locales } from '$lib/i18n/translator';
 </script>
 
@@ -13,7 +14,8 @@
 		$locale = 'en';
 	}}
 >
-	<span class="text-xs lg:text-sm 2xl:text-base max-lg:hidden"
+	<span
+		class="text-xs lg:text-sm 2xl:text-base {$currentAppLang === 'en' ? 'ar-common' : 'en-common'}"
 		>{$locale === 'en' ? 'العــربية' : 'English'}</span
 	>
 </button>

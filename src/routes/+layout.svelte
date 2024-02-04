@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t, locale, locales } from '$lib/i18n/translator';
+	import { currentAppLang } from '$lib/stores';
 
 	import { onMount } from 'svelte';
 	import '../app.postcss';
@@ -22,6 +23,9 @@
 	<title>{$t('tab.title')}</title>
 </svelte:head>
 
-<div dir={$pageDirection} class="bg-secondary-50">
+<div
+	dir={$pageDirection}
+	class="bg-secondary-50 {$currentAppLang === 'en' ? 'en-common' : 'ar-common'}"
+>
 	<slot />
 </div>

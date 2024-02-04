@@ -2,6 +2,7 @@
 	import Footer from '$lib/Footer.svelte';
 	import LocaleSwitcher from '$lib/LocaleSwitcher.svelte';
 	import { t, locale, locales } from '$lib/i18n/translator';
+	import { currentAppLang } from '$lib/stores';
 </script>
 
 <div class="w-screen flex justify-center">
@@ -18,7 +19,7 @@
 		<div class="absolute inset-0 bg-black opacity-40"></div>
 
 		<!-- Content container -->
-		<div class="relative flex flex-col items-center h-full pt-[15vh]">
+		<div class="relative flex flex-col items-center h-full pt-[12vh]">
 			<!-- Language Switcher -->
 			<div class="absolute top-8 right-8 text-white">
 				<LocaleSwitcher />
@@ -29,10 +30,24 @@
 			</div>
 
 			<!-- title -->
-			<div class="uppercase text-center space-y-5 mb-10">
-				<h1 class="text-white font-extrabold text-7xl">{$t('landing.title1')}</h1>
-				<h1 class="text-white font-extrabold text-7xl">{$t('landing.title2')}</h1>
-				<h1 class="text-white font-extrabold text-7xl">{$t('landing.title3')}</h1>
+			<div
+				class="uppercase text-center {$currentAppLang === 'en'
+					? 'space-y-5 en-landing-title text-8xl mb-12'
+					: 'space-y-16 ar-landing-title text-9xl mb-16'}"
+			>
+				<h1 class="text-white">
+					{$t('landing.title1')}
+				</h1>
+
+				{#if $currentAppLang === 'en'}
+					<h1 class="text-white">
+						{$t('landing.title2')}
+					</h1>
+				{/if}
+
+				<h1 class="text-white">
+					{$t('landing.title3')}
+				</h1>
 			</div>
 
 			<!-- Buttons -->
