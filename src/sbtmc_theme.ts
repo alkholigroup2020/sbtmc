@@ -89,8 +89,8 @@ export const sbtmc_theme: CustomThemeConfig = {
 		'--color-error-800': '153 0 0', // #990000
 		'--color-error-900': '125 0 0', // #7d0000
 		// surface | #000000
-		'--color-surface-50': '#FFFFFF', // #d9d9d9
-		// '--color-surface-50': '217 217 217', // #d9d9d9
+		// '--color-surface-50': '#FFFFFF',
+		'--color-surface-50': '217 217 217', // #d9d9d9
 		'--color-surface-100': '204 204 204', // #cccccc
 		'--color-surface-200': '191 191 191', // #bfbfbf
 		'--color-surface-300': '153 153 153', // #999999

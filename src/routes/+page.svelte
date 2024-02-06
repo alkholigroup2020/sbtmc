@@ -1,8 +1,13 @@
-<script type="ts">
+<script lang="ts">
 	import Footer from '$lib/Footer.svelte';
 	import LocaleSwitcher from '$lib/LocaleSwitcher.svelte';
 	import { t, locale, locales } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
+
+	import type { PageData } from './$types';
+	export let data: PageData;
+
+	const formData = data.form;
 </script>
 
 <div class="w-screen flex justify-center">
@@ -80,11 +85,7 @@
 			</div>
 
 			<!-- footer section -->
-			<div class="absolute bottom-0 w-full h-[16%] bg-secondary-300 opacity-80"></div>
-
-			<div class="absolute bottom-8 w-[90%] h-[20%] bg-surface-500">
-				<Footer />
-			</div>
+			<Footer {formData} />
 		</div>
 	</div>
 </div>

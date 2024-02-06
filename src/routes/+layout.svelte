@@ -17,11 +17,16 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	import { pageDirection } from '$lib/stores/index';
+
+	import { initializeStores, Toast } from '@skeletonlabs/skeleton';
+	initializeStores();
 </script>
 
 <svelte:head>
 	<title>{$t('tab.title')}</title>
 </svelte:head>
+
+<Toast position="tl" />
 
 <div
 	dir={$pageDirection}
