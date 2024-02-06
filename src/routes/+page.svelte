@@ -7,6 +7,7 @@
 
 <div class="w-screen flex justify-center">
 	<div class="relative h-screen w-[1920px]">
+		<!-- background image -->
 		<img
 			src="/main-bg_1920x1080.webp"
 			srcset="/main-bg_900x600.webp 768w, 
@@ -20,63 +21,68 @@
 
 		<!-- Content container -->
 		<div class="relative flex flex-col items-center h-full pt-[12vh]">
-			<!-- Language Switcher -->
-			<div class="absolute top-8 right-8 text-white">
-				<LocaleSwitcher />
-			</div>
 			<!-- logo -->
-			<div class="absolute top-8 left-8">
-				<img src="/small-white-logo.png" alt="Logo" class="mb-8 w-12" />
+			<div class="absolute top-5 md:top-8 left-8">
+				<img
+					src="/images/main-landing/small-white-logo_45x45.webp"
+					srcset="/images/main-landing/small-white-logo_35x35.webp 768w, 
+					/images/main-landing/small-white-logo_45x45.webp 2000w"
+					alt="Company Logo"
+					class="w-full min-w-5 md:min-w-8 max-w-8 aspect-square"
+				/>
+			</div>
+
+			<!-- Language Switcher -->
+			<div class="absolute top-3 md:top-5 right-8 text-white">
+				<LocaleSwitcher />
 			</div>
 
 			<!-- title -->
 			<div
 				class="uppercase text-center {$currentAppLang === 'en'
-					? 'space-y-5 en-landing-title text-8xl mb-12'
-					: 'space-y-16 ar-landing-title text-9xl mb-16'}"
+					? 'text-white en-landing-title space-y-5 mb-10 md:mb-14 2xl:mb-16 text-5xl min-[400px]:text-6xl md:text-7xl 2xl:text-8xl'
+					: 'text-white ar-landing-title space-y-12 2xl:space-y-16 mb-12 md:mb-16 2xl:mb-24 text-6xl md:text-7xl lg:text-8xl 2xl:text-[100px]'}"
 			>
-				<h1 class="text-white">
-					{$t('landing.title1')}
-				</h1>
+				<h1>{$t('landing.title1')}</h1>
 
 				{#if $currentAppLang === 'en'}
-					<h1 class="text-white">
-						{$t('landing.title2')}
-					</h1>
+					<h1>{$t('landing.title2')}</h1>
 				{/if}
 
-				<h1 class="text-white">
-					{$t('landing.title3')}
-				</h1>
+				<h1>{$t('landing.title3')}</h1>
 			</div>
 
 			<!-- Buttons -->
-			<div class="md:flex mt-5">
-				<a href="/construction">
-					<button
-						class="bg-secondary-200 hover:bg-primary-700 text-black hover:text-white py-4 rounded-lg mx-2 w-80 text-2xl"
-					>
-						<span class="uppercase">Construction</span>
-					</button>
-				</a>
+			<div class="grid md:grid-cols-2 md:gap-8 space-y-6 md:space-y-0">
+				<div>
+					<a href="/construction">
+						<button
+							class="bg-secondary-200 hover:bg-primary-700 text-black hover:text-white py-3 md:py-4 2xl:py-5 rounded-2xl w-60 min-[450px]:w-80 text-2xl"
+						>
+							<span class="uppercase text-base min-[450px]:text-xl 2xl:text-2xl"
+								>{$t('landing.btn1')}</span
+							>
+						</button>
+					</a>
+				</div>
 
-				<a href="/facility-management">
-					<button
-						class="bg-secondary-200 hover:bg-primary-700 text-black hover:text-white py-4 rounded-lg mx-2 w-80 text-2xl"
-					>
-						<span class="uppercase">Facility Management</span>
-					</button>
-				</a>
+				<div>
+					<a href="/facility-management">
+						<button
+							class="bg-secondary-200 hover:bg-primary-700 text-black hover:text-white py-3 md:py-4 2xl:py-5 rounded-2xl w-60 min-[450px]:w-80 px-2 min-[450px]:px-5 text-2xl"
+						>
+							<span class="uppercase text-base min-[450px]:text-xl 2xl:text-2xl"
+								>{$t('landing.btn2')}</span
+							>
+						</button>
+					</a>
+				</div>
 			</div>
 
 			<!-- footer section -->
-			<!-- <div class="absolute bottom-5 w-full z-10">
-				<div class="h-[200px] bg-surface-900 w-[90%] mx-auto">
-				</div>
-			</div> -->
+			<div class="absolute bottom-0 w-full h-[16%] bg-secondary-300 opacity-80"></div>
 
-			<!-- gray div -->
-			<div class="absolute bottom-0 w-full h-[12%] bg-secondary-200 opacity-80 flex justify-center">
+			<div class="absolute bottom-8 w-[90%] h-[20%] bg-surface-500">
 				<Footer />
 			</div>
 		</div>

@@ -15,7 +15,8 @@
 	}}
 >
 	<span
-		class="text-xs lg:text-sm 2xl:text-base {$currentAppLang === 'en' ? 'ar-common' : 'en-common'}"
-		>{$locale === 'en' ? 'العــربية' : 'English'}</span
+		class="text-xs md:text-sm lg:text-lg 2xl:text-xl {$currentAppLang === 'en'
+			? 'ar-common'
+			: 'en-common'}">{$locale === 'en' ? 'العــربية' : 'English'}</span
 	>
 </button>

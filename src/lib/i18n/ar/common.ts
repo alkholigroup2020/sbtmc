@@ -2,5 +2,7 @@ export default {
 	'tab.title': 'فن المعمار',
 	'landing.title1': 'نحن نبني',
 	'landing.title2': '',
-	'landing.title3': 'المستقبل'
+	'landing.title3': 'المستقبل',
+	'landing.btn1': 'البــناء',
+	'landing.btn2': 'إدارة المنشآت'
 };
