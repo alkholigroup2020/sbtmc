@@ -25,7 +25,7 @@
 		<div class="absolute inset-0 bg-black opacity-40"></div>
 
 		<!-- Content container -->
-		<div class="relative flex flex-col items-center h-full pt-[12vh]">
+		<div class="relative flex flex-col items-center h-full pt-[10vh] sm:pt-[12vh]">
 			<!-- logo -->
 			<div class="absolute top-5 md:top-8 left-8">
 				<img
@@ -43,18 +43,25 @@
 			</div>
 
 			<!-- title -->
+			<!-- text-4xl min-[400px]:text-5xl md:text-7xl 2xl:text-8xl -->
 			<div
-				class="uppercase text-center {$currentAppLang === 'en'
-					? 'text-white en-landing-title space-y-5 mb-10 md:mb-14 2xl:mb-16 text-5xl min-[400px]:text-6xl md:text-7xl 2xl:text-8xl'
-					: 'text-white ar-landing-title space-y-12 2xl:space-y-16 mb-12 md:mb-16 2xl:mb-24 text-6xl md:text-7xl lg:text-8xl 2xl:text-[100px]'}"
+				class="uppercase text-center text-white {$currentAppLang === 'en'
+					? 'en-landing-title mb-10 sm:mb-14 md:mb-16 2xl:mb-16 text-[10vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
+					: 'ar-landing-title mb-10 min-[400px]:mb-14 sm:mb-16 md:mb-20 xl:mb-24 text-[11vw] md:text-[9vw] lg:text-[7vw] 2xl:text-8xl'}"
 			>
-				<h1>{$t('landing.title1')}</h1>
-
-				{#if $currentAppLang === 'en'}
-					<h1>{$t('landing.title2')}</h1>
-				{/if}
-
-				<h1>{$t('landing.title3')}</h1>
+				<div
+					class=" {$currentAppLang === 'en'
+						? 'pb-8 min-[400px]:pb-12 sm:pb-14 md:pb-16 lg:pb-20 2xl:pb-5'
+						: 'pb-12 min-[400px]:pb-20 sm:pb-24 md:pb-28 2xl:pb-12'} "
+				>
+					<h1>{$t('landing.title1')}</h1>
+				</div>
+				<div class="flex sm:block space-x-3 sm:space-x-0">
+					{#if $currentAppLang === 'en'}
+						<h1 class="sm:pb-14 md:pb-16 lg:pb-20 2xl:pb-5">{$t('landing.title2')}</h1>
+					{/if}
+					<h1>{$t('landing.title3')}</h1>
+				</div>
 			</div>
 
 			<!-- Buttons -->
