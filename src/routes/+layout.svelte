@@ -22,6 +22,9 @@
 	import WindowSize from '$lib/WindowSize.svelte';
 	initializeStores();
 
+	import { navigating } from '$app/stores';
+	import LoadingSpinner from '$lib/LoadingSpinner.svelte';
+
 	$: devOrProduction = process.env.NODE_ENV === 'development' ? true : false;
 </script>
 
@@ -39,5 +42,9 @@
 	dir={$pageDirection}
 	class="bg-secondary-50 {$currentAppLang === 'en' ? 'en-common' : 'ar-common'}"
 >
-	<slot />
+	{#if $navigating}
+		<LoadingSpinner />
+	{:else}
+		<slot />
+	{/if}
 </div>
