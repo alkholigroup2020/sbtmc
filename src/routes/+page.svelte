@@ -8,6 +8,106 @@
 	export let data: PageData;
 
 	const formData = data.form;
+
+	import { gsap } from 'gsap';
+	import { TextPlugin } from 'gsap/dist/TextPlugin';
+
+	gsap.registerPlugin(TextPlugin);
+
+	let textElement1: HTMLElement;
+	let textElement2: HTMLElement;
+	let textElement3: HTMLElement;
+
+	// Ensure elements are defined before attempting to animate
+	function animateText() {
+		gsap.to(textElement1, {
+			text: $t('landing.title1'),
+			delay: 0.5,
+			duration: 0.8
+		});
+
+		if ($currentAppLang === 'en') {
+			gsap.to(textElement2, {
+				text: $t('landing.title2'),
+				delay: 1.3,
+				duration: 0.8
+			});
+		}
+
+		gsap.to(textElement3, {
+			text: $t('landing.title3'),
+			delay: $currentAppLang === 'en' ? 2.1 : 1.3,
+			duration: 0.8
+		});
+	}
+
+	// re-run the animation when the language changes
+	$: if ($currentAppLang && textElement1 && textElement2 && textElement3) {
+		// Clear the text content of each element
+		textElement1.textContent = '';
+		textElement2.textContent = '';
+		textElement3.textContent = '';
+		// Animate in the new text content for each element
+		animateText();
+	} else if ($currentAppLang && textElement1 && textElement3) {
+		// Clear the text content of each element
+		textElement1.textContent = '';
+		textElement3.textContent = '';
+		// Animate in the new text content for each element
+		animateText();
+	}
+
+	/*
+	The fadeFromBottom animations for the buttons will re-trigger every time the $currentAppLang store changes. 
+	This ensures that the animations will run not just on initial page load but also when the user switches languages.
+	*/
+	export function fadeFromBottom(node: HTMLElement, { delay = 0 } = {}) {
+		// Define a function to run the animation
+		const runAnimation = () => {
+			// Set initial state
+			gsap.set(node, { y: 50, autoAlpha: 0 });
+
+			// Start the animation
+			gsap.to(node, {
+				y: 0, // Move to original position
+				autoAlpha: 1, // Fade in
+				delay, // Start animation after a delay
+				duration: 0.8, // Duration of the animation
+				ease: 'power1.out' // Easing function for a smooth effect
+			});
+		};
+
+		// Initially run the animation
+		runAnimation();
+
+		return {
+			// Return a function to re-trigger the animation
+			runAnimation,
+
+			// Optional cleanup
+			destroy() {
+				// Reset style if needed when the component is destroyed
+				gsap.set(node, { clearProps: 'all' });
+			}
+		};
+	}
+	let fadeFromBottomActions: any[] = []; // Store references to the actions
+	// When the language changes, re-trigger the button animations
+	$: if ($currentAppLang) {
+		fadeFromBottomActions.forEach((action) => action.runAnimation());
+	}
+	// Use this function in the `use` directive to capture the action reference
+	function registerFadeFromBottomAction(node: HTMLElement, params = {}) {
+		const action = fadeFromBottom(node, params);
+		fadeFromBottomActions.push(action);
+		return {
+			destroy() {
+				// Remove the action from the array when the node is destroyed
+				fadeFromBottomActions = fadeFromBottomActions.filter((a) => a !== action);
+				action.destroy();
+			}
+		};
+	}
 </script>
 
 <div class="w-screen flex justify-center">
@@ -15,7 +115,7 @@
 		<!-- background image -->
 		<img
 			src="/main-bg_1920x1080.webp"
-			srcset="/main-bg_900x600.webp 768w, 
+			srcset="/main-bg_900x600.webp 768w,
 			/main-bg_1920x1080.webp 2000w"
 			alt="Main Background"
 			class="absolute inset-0 w-screen h-full object-cover aspect-[3/2] md:aspect-[16/9]"
@@ -25,7 +125,9 @@
 		<div class="absolute inset-0 bg-black opacity-40"></div>
 
 		<!-- Content container -->
-		<div class="relative flex flex-col items-center h-full pt-[10vh] sm:pt-[12vh]">
+		<div
+			class="relative flex flex-col items-center h-full pt-[10vh] sm:pt-[12vh] md:pt-[20vh] xl:pt-[14vh]"
+		>
 			<!-- logo -->
 			<div class="absolute top-5 md:top-8 left-8">
 				<img
@@ -43,7 +145,6 @@
 			</div>
 
 			<!-- title -->
-			<!-- text-4xl min-[400px]:text-5xl md:text-7xl 2xl:text-8xl -->
 			<div
 				class="uppercase text-center text-white {$currentAppLang === 'en'
 					? 'en-landing-title mb-10 sm:mb-14 md:mb-16 2xl:mb-16 text-[10vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
@@ -54,19 +155,22 @@
 						? 'pb-8 min-[400px]:pb-12 sm:pb-14 md:pb-16 lg:pb-20 2xl:pb-5'
 						: 'pb-12 min-[400px]:pb-20 sm:pb-24 md:pb-28 2xl:pb-12'} "
 				>
-					<h1>{$t('landing.title1')}</h1>
+					<!-- svelte-ignore a11y-missing-content -->
+					<h1 bind:this={textElement1}></h1>
 				</div>
 				<div class="flex sm:block space-x-3 sm:space-x-0">
 					{#if $currentAppLang === 'en'}
-						<h1 class="sm:pb-14 md:pb-16 lg:pb-20 2xl:pb-5">{$t('landing.title2')}</h1>
+						<!-- svelte-ignore a11y-missing-content -->
+						<h1 bind:this={textElement2} class="sm:pb-14 md:pb-16 lg:pb-20 2xl:pb-5"></h1>
 					{/if}
-					<h1>{$t('landing.title3')}</h1>
+					<!-- svelte-ignore a11y-missing-content -->
+					<h1 bind:this={textElement3}></h1>
 				</div>
 			</div>
 
 			<!-- Buttons -->
 			<div class="grid md:grid-cols-2 md:gap-8 space-y-6 md:space-y-0">
-				<div>
+				<div use:registerFadeFromBottomAction={{ delay: 2.8 }}>
 					<a href="/construction">
 						<button
 							class="bg-secondary-200 hover:bg-primary-700 text-black hover:text-white py-3 md:py-4 2xl:py-5 rounded-2xl w-60 min-[450px]:w-80 text-2xl"
@@ -77,8 +181,7 @@
 						</button>
 					</a>
 				</div>
-
-				<div>
+				<div use:registerFadeFromBottomAction={{ delay: 3.2 }}>
 					<a href="/facility-management">
 						<button
 							class="bg-secondary-200 hover:bg-primary-700 text-black hover:text-white py-3 md:py-4 2xl:py-5 rounded-2xl w-60 min-[450px]:w-80 px-2 min-[450px]:px-5 text-2xl"

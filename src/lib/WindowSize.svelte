@@ -32,7 +32,7 @@
 </script>
 
 <div
-	class="fixed bottom-1 left-1 bg-opacity-80 bg-blue-800 text-white text-center p-5 rounded-full z-[999] h-fit w-fit"
+	class="fixed top-5 left-24 bg-opacity-80 bg-blue-800 text-white text-center p-5 rounded-full z-[999] h-fit w-fit"
 >
 	<p class="text-xl">W: {dimensions.width}px</p>
 	<p class="text-xl">H: {dimensions.height}px</p>
