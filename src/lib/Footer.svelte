@@ -216,7 +216,7 @@
 					<img
 						src="/images/main-landing/small-white-logo_45x45.webp"
 						srcset="/images/main-landing/small-white-logo_35x35.webp 768w, 
-											/images/main-landing/small-white-logo_45x45.webp 2000w"
+										/images/main-landing/small-white-logo_45x45.webp 2000w"
 						alt="Company Logo"
 						class="w-full min-w-5 md:min-w-12 md:max-w-12 aspect-square {$currentAppLang === 'en'
 							? 'mr-8'

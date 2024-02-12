@@ -19,7 +19,10 @@
 	import { pageDirection } from '$lib/stores/index';
 
 	import { initializeStores, Toast } from '@skeletonlabs/skeleton';
+	import WindowSize from '$lib/WindowSize.svelte';
 	initializeStores();
+
+	$: devOrProduction = process.env.NODE_ENV === 'development' ? true : false;
 </script>
 
 <svelte:head>
@@ -27,6 +30,10 @@
 </svelte:head>
 
 <Toast position="tl" />
+
+{#if devOrProduction}
+	<WindowSize />
+{/if}
 
 <div
 	dir={$pageDirection}
