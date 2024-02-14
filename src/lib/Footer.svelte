@@ -39,7 +39,7 @@
 
 <div class="absolute bottom-0 w-full h-60 md:h-36 bg-secondary-300 opacity-80"></div>
 
-<div class="absolute bottom-5 w-[90%] bg-surface-500 h-70 md:h-44">
+<div class="absolute bottom-0 sm:bottom-5 container bg-surface-500">
 	<div class="text-surface-50">
 		<!-- form section -->
 		<div class="md:w-[80%] lg:w-[70%] xl:w-[50%] text-sm md:text-base">
@@ -47,11 +47,9 @@
 				<div class="flex justify-center">
 					<!-- logo -->
 					<img
-						src="/images/main-landing/small-white-logo_45x45.webp"
-						srcset="/images/main-landing/small-white-logo_35x35.webp 768w, 
-											/images/main-landing/small-white-logo_45x45.webp 2000w"
+						src="/images/main-landing/small-white-logo_48x48.webp"
 						alt="Company Logo"
-						class="w-full min-w-8 max-w-8 aspect-square"
+						class="w-8 h-8 aspect-square"
 					/>
 				</div>
 			</div>
@@ -211,16 +209,12 @@
 				</div>
 			</div>
 			<div class="hidden md:block">
-				<div class="h-full flex justify-end">
+				<div class="h-full flex justify-end items-end">
 					<!-- logo -->
 					<img
 						src="/images/main-landing/small-white-logo_45x45.webp"
-						srcset="/images/main-landing/small-white-logo_35x35.webp 768w, 
-										/images/main-landing/small-white-logo_45x45.webp 2000w"
 						alt="Company Logo"
-						class="w-full min-w-5 md:min-w-12 md:max-w-12 aspect-square {$currentAppLang === 'en'
-							? 'mr-8'
-							: 'mr-1'} "
+						class="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12"
 					/>
 				</div>
 			</div>

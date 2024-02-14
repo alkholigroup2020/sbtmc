@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Footer from '$lib/Footer.svelte';
 	import LocaleSwitcher from '$lib/LocaleSwitcher.svelte';
-	import { t, locale, locales } from '$lib/i18n/translator';
+	import { t } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
 
 	import type { PageData } from './$types';
@@ -126,7 +126,7 @@
 
 		<!-- Content container -->
 		<div
-			class="relative flex flex-col items-center h-full pt-[10vh] sm:pt-[12vh] md:pt-[20vh] xl:pt-[14vh]"
+			class="relative flex flex-col items-center h-full pt-[14vh] min-[450px]:pt-[16vh] sm:pt-[12vh] md:pt-[20vh] xl:pt-[14vh]"
 		>
 			<!-- logo -->
 			<div class="absolute top-5 md:top-8 left-8">
@@ -135,7 +135,7 @@
 					srcset="/images/main-landing/small-white-logo_35x35.webp 768w, 
 					/images/main-landing/small-white-logo_45x45.webp 2000w"
 					alt="Company Logo"
-					class="w-full min-w-5 md:min-w-8 max-w-8 aspect-square"
+					class="w-full min-w-5 max-w-8 md:min-w-8 aspect-square"
 				/>
 			</div>
 
@@ -147,13 +147,13 @@
 			<!-- title -->
 			<div
 				class="uppercase text-center text-white {$currentAppLang === 'en'
-					? 'en-landing-title mb-10 sm:mb-14 md:mb-16 2xl:mb-16 text-[10vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
-					: 'ar-landing-title mb-10 min-[400px]:mb-14 sm:mb-16 md:mb-20 xl:mb-24 text-[11vw] md:text-[9vw] lg:text-[7vw] 2xl:text-8xl'}"
+					? 'en-landing-title mb-14 sm:mb-14 md:mb-16 2xl:mb-16 text-[12vw] min-[500px]:text-[9vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
+					: 'ar-landing-title mb-12 min-[400px]:mb-16 md:mb-20 xl:mb-24 text-[12vw] min-[500px]:text-[10vw] md:text-[9vw] lg:text-[7vw] 2xl:text-8xl'}"
 			>
 				<div
 					class=" {$currentAppLang === 'en'
-						? 'pb-8 min-[400px]:pb-12 sm:pb-14 md:pb-16 lg:pb-20 2xl:pb-5'
-						: 'pb-12 min-[400px]:pb-20 sm:pb-24 md:pb-28 2xl:pb-12'} "
+						? 'pb-12 min-[400px]:pb-14 sm:pb-16 lg:pb-20 2xl:pb-5'
+						: 'pb-12 min-[400px]:pb-20 sm:pb-24 md:pb-28 xl:pb-32 2xl:pb-12'} "
 				>
 					<!-- svelte-ignore a11y-missing-content -->
 					<h1 bind:this={textElement1}></h1>

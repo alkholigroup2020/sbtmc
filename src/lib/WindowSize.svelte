@@ -32,9 +32,10 @@
 </script>
 
 <div
-	class="fixed top-5 left-24 bg-opacity-80 bg-blue-800 text-white text-center p-5 rounded-full z-[999] h-fit w-fit"
+	class="fixed top-5 left-24 bg-opacity-30 border-white border-2 bg-blue-800 text-white
+	text-center p-4 rounded-full z-[999] h-fit w-fit"
 >
-	<p class="text-xl">W: {dimensions.width}px</p>
-	<p class="text-xl">H: {dimensions.height}px</p>
-	<p class="text-3xl">{currentBreakpoint}</p>
+	<p class="text-lg">W: {dimensions.width}px</p>
+	<p class="text-lg">H: {dimensions.height}px</p>
+	<p class="text-2xl">{currentBreakpoint}</p>
 </div>

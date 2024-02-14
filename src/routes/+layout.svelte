@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { t, locale, locales } from '$lib/i18n/translator';
+	// import { t, locale, locales } from '$lib/i18n/translator';
+	import { t } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
 
 	import { onMount } from 'svelte';
