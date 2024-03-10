@@ -91,6 +91,7 @@
 			}
 		};
 	}
+
 	let fadeFromBottomActions: any[] = []; // Store references to the actions
 	// When the language changes, re-trigger the button animations
 	$: if ($currentAppLang) {

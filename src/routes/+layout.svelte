@@ -23,8 +23,13 @@
 	import WindowSize from '$lib/WindowSize.svelte';
 	initializeStores();
 
+	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
+	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
+	const drawerStore = getDrawerStore();
+
 	import { navigating } from '$app/stores';
 	import LoadingSpinner from '$lib/LoadingSpinner.svelte';
+	import DrawerLinksFm from '$lib/facility-management/navigation/DrawerLinksFM.svelte';
 
 	$: devOrProduction = process.env.NODE_ENV === 'development' ? true : false;
 </script>
@@ -35,8 +40,14 @@
 
 <Toast position="tl" />
 
+<Drawer>
+	{#if $drawerStore.id === 'facility'}
+		<DrawerLinksFm />
+	{/if}
+</Drawer>
+
 {#if devOrProduction}
-	<WindowSize />
+	<!-- <WindowSize /> -->
 {/if}
 
 <div

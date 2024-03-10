@@ -1,1 +1,8 @@
-<h1 class="text-9xl text-red-500 p-8">Facility Management</h1>
+<script lang="ts">
+</script>
+
+<div class="flex justify-center">
+	<div class="w-[1920px]">
+		<!--  -->
+	</div>
+</div>

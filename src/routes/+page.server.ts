@@ -25,9 +25,6 @@ export const actions = {
 			return fail(400, { form });
 		}
 
-		// TODO: Do something with the validated form.data
-		console.log('🚀 form.data:', form.data);
-
 		const emailTemplate = `
 			<table align="center" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse; border: 1px solid #cccccc; margin-bottom: 25px;">
 		
