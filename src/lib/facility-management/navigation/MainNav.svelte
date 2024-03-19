@@ -12,7 +12,7 @@
 	// : DrawerSettings
 	const drawerSettings: DrawerSettings = {
 		id: 'facility',
-		bgDrawer: 'bg-secondary-200-700-token',
+		bgDrawer: 'bg-secondary-200',
 		width: 'w-4/6',
 		rounded: 'rounded-xl'
 		// bgBackdrop: 'bg-gradient-to-tr from-indigo-500/50 via-purple-500/50 to-pink-500/50',

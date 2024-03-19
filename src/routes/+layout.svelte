@@ -47,7 +47,7 @@
 </Drawer>
 
 {#if devOrProduction}
-	<!-- <WindowSize /> -->
+	<WindowSize />
 {/if}
 
 <div

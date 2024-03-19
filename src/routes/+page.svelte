@@ -18,43 +18,54 @@
 	let textElement2: HTMLElement;
 	let textElement3: HTMLElement;
 
-	// Ensure elements are defined before attempting to animate
-	function animateText() {
-		gsap.to(textElement1, {
+	let isAnimating = true; // Start by assuming the animation is playing
+
+	// Function to start all text animations
+	function startTextAnimations() {
+		isAnimating = true; // Hide the LocaleSwitcher
+
+		// Define a timeline with GSAP for better control over multiple animations
+		const tl = gsap.timeline({
+			// onComplete: () => {
+			// 	isAnimating = false; // Show the LocaleSwitcher after all animations
+			// }
+		});
+
+		// Add text animations to the timeline
+		tl.to(textElement1, {
 			text: $t('landing.title1'),
 			delay: 0.5,
 			duration: 0.8
 		});
 
+		// Conditionally add the second animation if the current language is English
 		if ($currentAppLang === 'en') {
-			gsap.to(textElement2, {
+			tl.to(textElement2, {
 				text: $t('landing.title2'),
-				delay: 1.3,
 				duration: 0.8
 			});
 		}
 
-		gsap.to(textElement3, {
+		// Add the third animation
+		tl.to(textElement3, {
 			text: $t('landing.title3'),
-			delay: $currentAppLang === 'en' ? 2.1 : 1.3,
 			duration: 0.8
 		});
 	}
 
-	// re-run the animation when the language changes
+	// Watch for language changes and restart the animations
 	$: if ($currentAppLang && textElement1 && textElement2 && textElement3) {
 		// Clear the text content of each element
 		textElement1.textContent = '';
 		textElement2.textContent = '';
 		textElement3.textContent = '';
-		// Animate in the new text content for each element
-		animateText();
+		startTextAnimations();
 	} else if ($currentAppLang && textElement1 && textElement3) {
 		// Clear the text content of each element
 		textElement1.textContent = '';
 		textElement3.textContent = '';
 		// Animate in the new text content for each element
-		animateText();
+		startTextAnimations();
 	}
 
 	/*
@@ -64,6 +75,8 @@
 	export function fadeFromBottom(node: HTMLElement, { delay = 0 } = {}) {
 		// Define a function to run the animation
 		const runAnimation = () => {
+			// isAnimating = true; // Hide the LocaleSwitcher
+
 			// Set initial state
 			gsap.set(node, { y: 50, autoAlpha: 0 });
 
@@ -73,7 +86,10 @@
 				autoAlpha: 1, // Fade in
 				delay, // Start animation after a delay
 				duration: 0.8, // Duration of the animation
-				ease: 'power1.out' // Easing function for a smooth effect
+				ease: 'power1.out', // Easing function for a smooth effect
+				onComplete: () => {
+					isAnimating = false; // Show the LocaleSwitcher after all animations
+				}
 			});
 		};
 
@@ -142,19 +158,21 @@
 
 			<!-- Language Switcher -->
 			<div class="absolute top-3 md:top-5 right-8 text-white">
-				<LocaleSwitcher />
+				{#if !isAnimating}
+					<LocaleSwitcher />
+				{/if}
 			</div>
 
 			<!-- title -->
 			<div
 				class="uppercase text-center text-white {$currentAppLang === 'en'
 					? 'en-landing-title mb-14 sm:mb-14 md:mb-16 2xl:mb-16 text-[12vw] min-[500px]:text-[9vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
-					: 'ar-landing-title mb-12 min-[400px]:mb-16 md:mb-20 xl:mb-24 text-[12vw] min-[500px]:text-[10vw] md:text-[9vw] lg:text-[7vw] 2xl:text-8xl'}"
+					: 'ar-landing-title mb-12 min-[400px]:mb-16 md:mb-20 xl:mb-24 text-[12vw] min-[500px]:text-[10vw] md:text-[9vw] lg:text-[7vw] 2xl:text-7xl'}"
 			>
 				<div
 					class=" {$currentAppLang === 'en'
 						? 'pb-12 min-[400px]:pb-14 sm:pb-16 lg:pb-20 2xl:pb-5'
-						: 'pb-12 min-[400px]:pb-20 sm:pb-24 md:pb-28 xl:pb-32 2xl:pb-12'} "
+						: 'pb-12 min-[400px]:pb-20 sm:pb-24 md:pb-28 xl:pb-32 2xl:pb-16'} "
 				>
 					<!-- svelte-ignore a11y-missing-content -->
 					<h1 bind:this={textElement1}></h1>

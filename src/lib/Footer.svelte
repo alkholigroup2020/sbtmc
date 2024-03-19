@@ -37,23 +37,23 @@
 	});
 </script>
 
-<div class="absolute bottom-0 w-full h-60 md:h-36 bg-secondary-300 opacity-80"></div>
+<div class="absolute bottom-0 w-full h-0 sm:h-44 md:h-36 bg-secondary-300 opacity-80"></div>
 
 <div class="absolute bottom-0 sm:bottom-5 container bg-surface-500">
 	<div class="text-surface-50">
 		<!-- form section -->
 		<div class="md:w-[80%] lg:w-[70%] xl:w-[50%] text-sm md:text-base">
-			<div class="md:hidden pt-5">
+			<!-- logo -->
+			<!-- <div class="md:hidden pt-5">
 				<div class="flex justify-center">
-					<!-- logo -->
 					<img
 						src="/images/main-landing/small-white-logo_48x48.webp"
 						alt="Company Logo"
 						class="w-8 h-8 aspect-square"
 					/>
 				</div>
-			</div>
-			<div class="grid md:grid-cols-3 px-5 pt-5 md:px-8 md:pt-8">
+			</div> -->
+			<div class="grid md:grid-cols-3 px-5 pt-6 md:px-8 md:pt-8">
 				<!-- the red part -->
 				<div
 					class="bg-primary-700 w-full text-surface-50 px-3 md:px-0 py-2 md:text-center uppercase {$currentAppLang ===
@@ -83,15 +83,13 @@
 				</div>
 			</div>
 		</div>
-		<!-- rights & icons section -->
-		<div class="md:grid md:grid-cols-3 p-5 md:p-7" dir="ltr">
-			<div class="text-sm text-center md:text-left">
-				<p>All rights @ Alkholi Group</p>
-				<p class="pt-2">Cookie Policy | Privacy | Terms & Conditions</p>
-			</div>
 
-			<div dir="ltr" class="flex justify-center items-end pt-5 md:pt-0">
+		<!-- rights & icons section -->
+		<div class="md:grid md:grid-cols-3 p-3 md:p-7" dir="ltr">
+			<!-- social media icons -->
+			<div dir="ltr" class="flex justify-center items-end pt-3 md:pt-0 md:order-2">
 				<div class="flex space-x-5">
+					<!-- facebook -->
 					<div>
 						<span>
 							<svg
@@ -116,6 +114,7 @@
 							</svg>
 						</span>
 					</div>
+					<!-- twitter -->
 					<div>
 						<span>
 							<svg
@@ -146,6 +145,7 @@
 							</svg>
 						</span>
 					</div>
+					<!-- instagram -->
 					<div>
 						<span>
 							<svg
@@ -176,6 +176,7 @@
 							</svg>
 						</span>
 					</div>
+					<!-- YouTube -->
 					<div>
 						<span>
 							<svg
@@ -208,7 +209,14 @@
 					</div>
 				</div>
 			</div>
-			<div class="hidden md:block">
+
+			<!-- rights -->
+			<div class="text-sm text-center md:text-left space-y-2 md:order-1">
+				<p class="pt-2">Cookie Policy | Privacy | Terms & Conditions</p>
+				<p>All rights @ Alkholi Group</p>
+			</div>
+
+			<div class="hidden md:block md:order-3">
 				<div class="h-full flex justify-end items-end">
 					<!-- logo -->
 					<img
