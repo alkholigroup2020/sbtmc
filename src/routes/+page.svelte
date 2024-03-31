@@ -167,12 +167,12 @@
 			<div
 				class="uppercase text-center text-white {$currentAppLang === 'en'
 					? 'en-landing-title mb-14 sm:mb-14 md:mb-16 2xl:mb-16 text-[12vw] min-[500px]:text-[9vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
-					: 'ar-landing-title mb-12 min-[400px]:mb-16 md:mb-20 xl:mb-24 text-[12vw] min-[500px]:text-[10vw] md:text-[9vw] lg:text-[7vw] 2xl:text-7xl'}"
+					: 'ar-landing-title mb-12 min-[400px]:mb-20 md:mb-24 xl:mb-24 text-[11vw] min-[500px]:text-[9vw] md:text-[8vw] lg:text-[7vw] xl:text-[5vw] 2xl:text-7xl'}"
 			>
 				<div
 					class=" {$currentAppLang === 'en'
 						? 'pb-12 min-[400px]:pb-14 sm:pb-16 lg:pb-20 2xl:pb-5'
-						: 'pb-12 min-[400px]:pb-20 sm:pb-24 md:pb-28 xl:pb-32 2xl:pb-16'} "
+						: 'pb-16 min-[400px]:pb-24 sm:pb-28 md:pb-32 xl:pb-36 2xl:pb-20'} "
 				>
 					<!-- svelte-ignore a11y-missing-content -->
 					<h1 bind:this={textElement1}></h1>

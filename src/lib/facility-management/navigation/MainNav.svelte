@@ -2,7 +2,7 @@
 	import LocaleSwitcher from '$lib/LocaleSwitcher.svelte';
 	import { AppBar, AppRailAnchor } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
-	import { currentAppLang } from '$lib/stores';
+	import { currentAppLang, pageDirection } from '$lib/stores';
 	import { t, locale, locales } from '$lib/i18n/translator';
 	import { modeCurrent } from '@skeletonlabs/skeleton';
 
@@ -14,7 +14,7 @@
 		id: 'facility',
 		bgDrawer: 'bg-secondary-200',
 		width: 'w-4/6',
-		rounded: 'rounded-xl'
+		rounded: 'rounded-sm'
 		// bgBackdrop: 'bg-gradient-to-tr from-indigo-500/50 via-purple-500/50 to-pink-500/50',
 		// padding: 'p-4',
 	};
@@ -66,10 +66,10 @@
 			</button>
 		</svelte:fragment>
 		<!-- nav links -->
-		<div class="text-white max-md:hidden flex" dir={$currentAppLang === 'en' ? 'ltr' : 'rtl'}>
+		<div class="text-white max-md:hidden flex" dir={$pageDirection}>
 			<AppRailAnchor href="/facility-management" title="home">
 				<span
-					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-extralight mx-3 lg:mx-8 {$page.url
+					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-light mx-3 lg:mx-8 {$page.url
 						.pathname === '/facility-management'
 						? 'border-b-2 border-primary-500'
 						: ''}">{$t('nav.home')}</span
@@ -77,7 +77,7 @@
 			</AppRailAnchor>
 			<AppRailAnchor href="/facility-management/about-us" title="about-us">
 				<span
-					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-extralight mx-3 lg:mx-8
+					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-light mx-3 lg:mx-8
 				{$page.url.pathname === '/facility-management/about-us' ? 'border-b-2 border-primary-500' : ''}
 				
 				">{$t('nav.about')}</span
@@ -85,7 +85,7 @@
 			</AppRailAnchor>
 			<AppRailAnchor href="/facility-management/construction" title="construction">
 				<span
-					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-extralight mx-3 lg:mx-8 {$page.url
+					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-light mx-3 lg:mx-8 {$page.url
 						.pathname === '/facility-management/construction'
 						? 'border-b-2 border-primary-500'
 						: ''}">{$t('nav.construction')}</span
@@ -93,7 +93,7 @@
 			</AppRailAnchor>
 			<AppRailAnchor href="/facility-management/projects" title="projects">
 				<span
-					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-extralight mx-3 lg:mx-8 {$page.url
+					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-light mx-3 lg:mx-8 {$page.url
 						.pathname === '/facility-management/projects'
 						? 'border-b-2 border-primary-500'
 						: ''}">{$t('nav.projects')}</span
@@ -101,7 +101,7 @@
 			</AppRailAnchor>
 			<AppRailAnchor href="/facility-management/contact-us" title="contact-us">
 				<span
-					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-extralight mx-3 lg:mx-8 {$page.url
+					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-light mx-3 lg:mx-8 {$page.url
 						.pathname === '/facility-management/contact-us'
 						? 'border-b-2 border-primary-500'
 						: ''}">{$t('nav.contact')}</span
