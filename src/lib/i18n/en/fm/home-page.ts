@@ -14,5 +14,14 @@ export default {
 	'about.li5': 'Introduction of the latest scientific information in the scope of work. ',
 	'about.li6':
 		'Foundation of an optimal integration between state-of-the-art technology, labor and costs.',
-	'about.more': 'Read More'
+	'about.more': 'Read More',
+	'services.title': 'Our Services',
+	'service1.title1': 'INSTALLATION AND MAINTENANCE',
+	'service1.title2': 'TURBINES, POWER ENGINES, AND BOILERS',
+	'service1.text':
+		'The company provides installation and maintenance of turbines, power engines, pressure rooms, power generators, mechanical rooms and boilers and the company has a very large experience in the installation and maintenance of turbines through specialized engineers and technicians in engines.',
+	'service2.title1': 'INSTALLATION AND MAINTENANCE OF',
+	'service2.title2': 'ELEVATOR AND ESCALTOR SYSTEMS',
+	'service2.text':
+		'The company provides installation and maintenance of elevator, escalator and mobile passageways of all types and sizes, knowing that the company has a license for the installation and maintenance of elevator and escalator systems as approved by the civil defense as per the applicable standards and specifications in the Kingdom of Saudi Arabia.'
 };
