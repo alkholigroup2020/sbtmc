@@ -4,6 +4,7 @@
 
 	import AboutUs from '$lib/facility-management/home/AboutUs.svelte';
 	import OurServices from '$lib/facility-management/home/OurServices.svelte';
+	import Departments from '$lib/facility-management/home/Departments.svelte';
 </script>
 
 <div class="flex justify-center">
@@ -27,8 +28,8 @@
 						{$currentAppLang === 'en' ? 'space-y-8 font-extrabold' : 'space-y-8 md:space-y-12 font-bold'}
 						absolute inset-0 flex flex-col justify-center items-center uppercase text-white text-4xl md:text-6xl xl:text-7xl"
 					>
-						<h1>{$t('home.title.f')}</h1>
-						<h1>{$t('home.title.m')}</h1>
+						<h1>{$t('fm.home.title.f')}</h1>
+						<h1>{$t('fm.home.title.m')}</h1>
 					</div>
 				</div>
 			</div>
@@ -36,7 +37,8 @@
 
 		<AboutUs />
 		<OurServices />
+		<Departments />
 
-		<div class="h-[800px]"></div>
+		<div class="h-[500px]"></div>
 	</div>
 </div>

@@ -13,7 +13,7 @@
 						? 'pb-1'
 						: 'pb-3'}"
 				>
-					{$t('about.title')}
+					{$t('fm.home.about.title')}
 				</h2>
 			</div>
 			<div class="{$currentAppLang === 'en' ? 'w-28' : 'w-20'} h-[2px] bg-primary-700"></div>
@@ -21,25 +21,25 @@
 		<!-- text -->
 		<div class="px-5 sm:px-8 md:px-28 xl:px-[15%] text-justify py-10 space-y-5">
 			<p class="text-base lg:text-lg font-light">
-				{$t('about.p1')}
+				{$t('fm.home.about.p1')}
 			</p>
 			<p class="text-base lg:text-lg font-light">
-				{$t('about.p2')}
+				{$t('fm.home.about.p2')}
 			</p>
 			<ul class="list-none space-y-2 text-base lg:text-lg font-light">
-				<li>{$t('about.li1')}</li>
-				<li>{$t('about.li2')}</li>
-				<li>{$t('about.li3')}</li>
-				<li>{$t('about.li4')}</li>
-				<li>{$t('about.li5')}</li>
-				<li>{$t('about.li6')}</li>
+				<li>{$t('fm.home.about.li1')}</li>
+				<li>{$t('fm.home.about.li2')}</li>
+				<li>{$t('fm.home.about.li3')}</li>
+				<li>{$t('fm.home.about.li4')}</li>
+				<li>{$t('fm.home.about.li5')}</li>
+				<li>{$t('fm.home.about.li6')}</li>
 			</ul>
 		</div>
 		<!-- read more btn -->
 		<div class="flex justify-center py-2">
 			<button class="btn bg-primary-700 rounded-none text-white text-base lg:text-lg py-3">
 				<span>
-					{$t('about.more')}
+					{$t('fm.home.about.more')}
 				</span>
 				<span
 					><svg
