@@ -5,6 +5,8 @@
 	import AboutUs from '$lib/facility-management/home/AboutUs.svelte';
 	import OurServices from '$lib/facility-management/home/OurServices.svelte';
 	import Departments from '$lib/facility-management/home/Departments.svelte';
+	import OurClients from '$lib/facility-management/home/OurClients.svelte';
+	import Footer from '$lib/Footer.svelte';
 </script>
 
 <div class="flex justify-center">
@@ -38,7 +40,8 @@
 		<AboutUs />
 		<OurServices />
 		<Departments />
+		<OurClients />
 
-		<div class="h-[500px]"></div>
+		<div class="h-[300px]"></div>
 	</div>
 </div>

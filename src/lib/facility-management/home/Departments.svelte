@@ -187,7 +187,7 @@
 	class="mt-[500px] min-[350px]:mt-[450px] min-[370px]:mt-[400px] min-[420px]:mt-[350px]
 	min-[475px]:mt-[250px] min-[560px]:mt-[200px] md:mt-32 xl:mt-0"
 >
-	<div class="container mx-auto py-12 md:py-16 xl:py-20">
+	<div class="container mx-auto pt-12 md:pt-16 xl:pt-20">
 		<!-- title -->
 		<div class="flex flex-col items-center">
 			<div class="w-fit">

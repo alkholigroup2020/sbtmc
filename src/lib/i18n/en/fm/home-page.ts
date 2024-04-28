@@ -42,5 +42,6 @@ export default {
 		'In order to ensure the implementation of high recognized standards and to keep employees harmless, the company has decided to establish HSE (Health, Safety and Environment Department).',
 	'fm.home.department5.title': 'Project Division:',
 	'fm.home.department5.text':
-		'Responsible for the actual management of multiple project phases and it consists of many engineers and technicians enjoying remarkable expertise in different areas and specialized in civil, electrical and mechanical engineering and others so as to guarantee accurate project implementation.'
+		'Responsible for the actual management of multiple project phases and it consists of many engineers and technicians enjoying remarkable expertise in different areas and specialized in civil, electrical and mechanical engineering and others so as to guarantee accurate project implementation.',
+	'fm.home.clients.title': 'Our Clients'
 };
