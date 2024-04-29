@@ -6,7 +6,11 @@
 	import OurServices from '$lib/facility-management/home/OurServices.svelte';
 	import Departments from '$lib/facility-management/home/Departments.svelte';
 	import OurClients from '$lib/facility-management/home/OurClients.svelte';
-	import Footer from '$lib/Footer.svelte';
+	import FmFooter from '$lib/facility-management/FMFooter.svelte';
+
+	import type { PageData } from './$types';
+	export let data: PageData;
+	const formData = data.form;
 </script>
 
 <div class="flex justify-center">
@@ -41,7 +45,6 @@
 		<OurServices />
 		<Departments />
 		<OurClients />
-
-		<div class="h-[300px]"></div>
+		<FmFooter {formData} />
 	</div>
 </div>

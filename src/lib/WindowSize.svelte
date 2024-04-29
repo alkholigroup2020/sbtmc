@@ -32,7 +32,7 @@
 </script>
 
 <div
-	class="fixed bottom-12 left-5 bg-opacity-60 border-white border-2 bg-blue-800 text-white
+	class="fixed top-12 left-5 bg-opacity-60 border-white border-2 bg-blue-800 text-white
 	text-center p-4 rounded-full z-[999] h-fit w-fit"
 >
 	<p class="text-lg">W: {dimensions.width}px</p>

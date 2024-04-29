@@ -4,7 +4,7 @@
 </script>
 
 <section>
-	<div class="container mx-auto pb-12 md:pb-16 xl:pb-20 pt-3 md:pt-5">
+	<div class="container mx-auto py-12 md:py-16 xl:py-20">
 		<!-- title -->
 		<div class="flex flex-col items-center">
 			<div class="w-fit">

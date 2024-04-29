@@ -222,7 +222,7 @@
 					<img
 						src="/images/main-landing/small-white-logo_45x45.webp"
 						alt="Company Logo"
-						class="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12"
+						class="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10"
 					/>
 				</div>
 			</div>
