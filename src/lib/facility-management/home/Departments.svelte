@@ -44,86 +44,151 @@
 	function multiColumnLeft(): void {
 		const childWidth = departElement.children[0].getBoundingClientRect().width;
 		if (departElement.scrollLeft <= 0) {
-			gsap.to(departElement, {
-				scrollLeft: departElement.scrollWidth - childWidth,
-				duration: 0.2, // Animation duration in seconds
-				ease: 'back.inOut' // Smoothing animation
-			});
-			// Active slide adjustments
-			if (currentBreakpoint === '2xl') {
-				activeSlide = '04';
-			} else if (currentBreakpoint === 'lg' || currentBreakpoint === 'xl') {
-				activeSlide = '04';
-			} else {
+			if (activeSlide === '02') {
+				activeSlide = '01';
+			} else if (activeSlide === '01') {
 				activeSlide = '05';
+				gsap.to(departElement, {
+					scrollLeft: departElement.scrollWidth - childWidth,
+					duration: 0.2, // Animation duration in seconds
+					ease: 'back.inOut' // Smoothing animation
+				});
 			}
 		} else {
-			gsap.to(departElement, {
-				scrollLeft: `-= ${childWidth}`,
-				duration: 0.2,
-				ease: 'back.inOut'
-			});
 			// Active slide adjustments
 			if (currentBreakpoint === '2xl') {
-				if (activeSlide === '04') {
+				if (activeSlide === '05') {
+					activeSlide = '04';
+				} else if (activeSlide === '04') {
 					activeSlide = '03';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				} else if (activeSlide === '03') {
 					activeSlide = '02';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				}
 			} else if (currentBreakpoint === 'lg' || currentBreakpoint === 'xl') {
-				if (activeSlide === '04') {
-					activeSlide = '03';
-				} else if (activeSlide === '03') {
-					activeSlide = '02';
-				} else if (activeSlide === '02') {
-					activeSlide = '01';
-				}
-			} else {
 				if (activeSlide === '01') {
 					activeSlide = '05';
+					gsap.to(departElement, {
+						scrollLeft: departElement.scrollWidth - childWidth,
+						duration: 0.2, // Animation duration in seconds
+						ease: 'back.inOut' // Smoothing animation
+					});
 				} else if (activeSlide === '05') {
 					activeSlide = '04';
 				} else if (activeSlide === '04') {
 					activeSlide = '03';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				} else if (activeSlide === '03') {
 					activeSlide = '02';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				} else if (activeSlide === '02') {
 					activeSlide = '01';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
+				}
+			} else {
+				if (activeSlide === '01') {
+					activeSlide = '05';
+					gsap.to(departElement, {
+						scrollLeft: departElement.scrollWidth - childWidth,
+						duration: 0.2, // Animation duration in seconds
+						ease: 'back.inOut' // Smoothing animation
+					});
+				} else if (activeSlide === '05') {
+					activeSlide = '04';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
+				} else if (activeSlide === '04') {
+					activeSlide = '03';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
+				} else if (activeSlide === '03') {
+					activeSlide = '02';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
+				} else if (activeSlide === '02') {
+					activeSlide = '01';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				}
 			}
 		}
 	}
 
 	function multiColumnRight(): void {
+		// Get the width of the first child element for calculation
 		const childWidth = departElement.children[0].getBoundingClientRect().width;
-
+		// Check if it's the last slide
 		if (
 			departElement.scrollLeft >=
 			departElement.scrollWidth - departElement.clientWidth - childWidth
 		) {
-			gsap.to(departElement, {
-				scrollLeft: 0,
-				duration: 0.2,
-				ease: 'back.inOut'
-			});
-			// Active slide adjustments
-			if (currentBreakpoint === '2xl') {
-				activeSlide = '02';
-			} else {
+			// Set the activeSlide to '05' when reaching the end instead of looping back
+			if (activeSlide === '03') {
+				activeSlide = '04';
+			} else if (activeSlide === '04') {
+				activeSlide = '05';
+			} else if (activeSlide === '05') {
+				gsap.to(departElement, {
+					scrollLeft: 0,
+					duration: 0.2,
+					ease: 'back.inOut'
+				});
 				activeSlide = '01';
 			}
 		} else {
-			gsap.to(departElement, {
-				scrollLeft: `+= ${childWidth}`,
-				duration: 0.2,
-				ease: 'back.inOut'
-			});
-			// Active slide adjustments
+			// Increment activeSlide based on the current breakpoint
 			if (currentBreakpoint === '2xl') {
-				if (activeSlide === '02') {
+				if (activeSlide === '01') {
+					activeSlide = '02';
+				} else if (activeSlide === '02') {
 					activeSlide = '03';
+					gsap.to(departElement, {
+						scrollLeft: `+= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				} else if (activeSlide === '03') {
 					activeSlide = '04';
+					gsap.to(departElement, {
+						scrollLeft: `+= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
+				} else if (activeSlide === '04') {
+					activeSlide = '05';
 				}
 			} else {
 				if (activeSlide === '01') {
@@ -135,6 +200,11 @@
 				} else if (activeSlide === '04') {
 					activeSlide = '05';
 				}
+				gsap.to(departElement, {
+					scrollLeft: `+= ${childWidth}`,
+					duration: 0.2,
+					ease: 'back.inOut'
+				});
 			}
 		}
 	}
@@ -206,13 +276,13 @@
 		</div>
 
 		<!-- content -->
-		<div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center my-12">
+		<div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center my-12 mx-3 md:mx-12 lg:mx-0">
 			<!-- Button: Left -->
-			<button type="button" on:click={multiColumnLeft}>
+			<button type="button" aria-label="left-arrow" on:click={multiColumnLeft}>
 				<span>
 					<svg
 						viewBox="0 0 1024 1024"
-						class="icon w-5 md:w-7 h-5 md:h-7 rotate-90 mr-3"
+						class="icon w-5 md:w-9 h-5 md:h-9 rotate-90 mr-3"
 						version="1.1"
 						xmlns="http://www.w3.org/2000/svg"
 						><path
@@ -238,7 +308,7 @@
 						}}
 						class="flex flex-col shrink-0 w-full lg:w-1/2 2xl:w-[33%] snap-start p-5 sm:p-8 md:p-12 h-fit
 						{activeSlide === department.number
-							? 'bg-primary-700 text-surface-50 m-2 rounded-lg shadow-lg shadow-surface-400'
+							? 'bg-primary-700 text-surface-50 rounded-lg shadow-lg shadow-surface-400 '
 							: 'bg-surface-50'}
 						"
 					>
@@ -264,11 +334,11 @@
 			</div>
 
 			<!-- Button-Right -->
-			<button type="button" on:click={multiColumnRight}>
+			<button type="button" aria-label="right-arrow" on:click={multiColumnRight}>
 				<span>
 					<svg
 						viewBox="0 0 1024 1024"
-						class="icon w-5 md:w-7 h-5 md:h-7 -rotate-90 ml-3"
+						class="icon w-5 md:w-9 h-5 md:h-9 -rotate-90 ml-3"
 						version="1.1"
 						xmlns="http://www.w3.org/2000/svg"
 						><path
