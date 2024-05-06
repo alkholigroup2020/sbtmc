@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AboutUs from '$lib/facility-management/about/AboutUs.svelte';
 	import FactsAboutUs from '$lib/facility-management/about/FactsAboutUs.svelte';
+	import VisionAndMission from '$lib/facility-management/about/VisionAndMission.svelte';
 	import { t } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
 </script>
@@ -18,15 +19,29 @@
 						/images/fm/about/fm-about-hero_1120x630.webp 1024w, 
 						/images/fm/about/fm-about-hero_1920x1080.webp 2000w"
 						alt="a hero background"
-						class="absolute inset-0 object-cover w-full h-full aspect-auto"
+						class="absolute inset-0 object-cover object-top w-full h-full aspect-auto"
 					/>
-					<div class="absolute inset-0 bg-black opacity-30"></div>
+					<div class="absolute inset-0 bg-black opacity-20"></div>
 				</div>
 			</div>
 		</div>
 
 		<AboutUs />
 		<FactsAboutUs />
+
+		<!-- image of two engineers -->
+		<div class="py-5 md:py-14 container mx-auto">
+			<img
+				src="/images/fm/about/two-engineers_1600x400.webp"
+				srcset="/images/fm/about/two-engineers_800x400.webp 768w, 
+				/images/fm/about/two-engineers_1600x400.webp 2000w"
+				alt="two working engineers"
+				class="w-full aspect-[1/0.5] md:aspect-[1/0.25]"
+			/>
+		</div>
+		<div class="-mt-28">
+			<VisionAndMission />
+		</div>
 
 		<div class="w-full h-[300px]"></div>
 	</div>

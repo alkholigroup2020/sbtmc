@@ -14,5 +14,11 @@ export default {
 	'fm.about.facts.p3': 'Approx. 2100 Group Manpower',
 	'fm.about.facts.p4': 'Approx. 450 Saudi Employees',
 	'fm.about.facts.p5': '3 International Branches',
-	'fm.about.facts.p6': '12 Offices in Kingdom of Saudi Arabia'
+	'fm.about.facts.p6': '12 Offices in Kingdom of Saudi Arabia',
+	'fm.about.mission.title': 'MISSION',
+	'fm.about.mission.text':
+		'Our inspiration is our desire to be distinguished as regional leaders in maintenance, operations, our commitment is to maintain a long relationship with our clients.',
+	'fm.about.vision.title': 'VISION',
+	'fm.about.vision.text':
+		'To deliver excellence in maintenance, operations, to be bound by our commitment to our clients and to a sustainable world, and to go beyond expectations. '
 };
