@@ -20,5 +20,7 @@ export default {
 		'Our inspiration is our desire to be distinguished as regional leaders in maintenance, operations, our commitment is to maintain a long relationship with our clients.',
 	'fm.about.vision.title': 'VISION',
 	'fm.about.vision.text':
-		'To deliver excellence in maintenance, operations, to be bound by our commitment to our clients and to a sustainable world, and to go beyond expectations. '
+		'To deliver excellence in maintenance, operations, to be bound by our commitment to our clients and to a sustainable world, and to go beyond expectations. ',
+
+	'fm.about.iso.title': 'ISO CERTIFICATIONS'
 };

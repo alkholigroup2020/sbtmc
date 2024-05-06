@@ -1,9 +1,14 @@
 <script lang="ts">
+	import FmFooter from '$lib/facility-management/FMFooter.svelte';
 	import AboutUs from '$lib/facility-management/about/AboutUs.svelte';
 	import FactsAboutUs from '$lib/facility-management/about/FactsAboutUs.svelte';
+	import IsoLogos from '$lib/facility-management/about/ISOLogos.svelte';
+	import OurClients from '$lib/facility-management/about/OurClients.svelte';
 	import VisionAndMission from '$lib/facility-management/about/VisionAndMission.svelte';
-	import { t } from '$lib/i18n/translator';
-	import { currentAppLang } from '$lib/stores';
+
+	import type { PageData } from './$types';
+	export let data: PageData;
+	const formData = data.form;
 </script>
 
 <div class="flex justify-center">
@@ -43,6 +48,11 @@
 			<VisionAndMission />
 		</div>
 
-		<div class="w-full h-[300px]"></div>
+		<IsoLogos />
+		<!-- <div class="w-full h-[100px]"></div> -->
+
+		<OurClients />
+
+		<FmFooter {formData} />
 	</div>
 </div>
