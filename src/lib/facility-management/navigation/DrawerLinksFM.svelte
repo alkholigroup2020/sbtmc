@@ -55,14 +55,14 @@
 
 		<li>
 			<a
-				href="/facility-management/construction"
+				href="/facility-management/services"
 				on:click={() => {
 					drawerStore.close();
 				}}
 				style="border-radius: 0px !important;"
-				class="hover:rounded-none {classesActive('/facility-management/construction')}"
+				class="hover:rounded-none {classesActive('/facility-management/services')}"
 			>
-				<span class="flex-auto py-3 text-black">{$t('nav.construction')}</span>
+				<span class="flex-auto py-3 text-black">{$t('nav.services')}</span>
 			</a>
 		</li>
 

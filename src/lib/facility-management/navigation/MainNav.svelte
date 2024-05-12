@@ -83,12 +83,12 @@
 				">{$t('nav.about')}</span
 				>
 			</AppRailAnchor>
-			<AppRailAnchor href="/facility-management/construction" title="construction">
+			<AppRailAnchor href="/facility-management/services" title="services">
 				<span
 					class="text-xs md:text-sm lg:text-lg 2xl:text-xl font-light mx-3 lg:mx-8 {$page.url
-						.pathname === '/facility-management/construction'
+						.pathname === '/facility-management/services'
 						? 'border-b-2 border-primary-500'
-						: ''}">{$t('nav.construction')}</span
+						: ''}">{$t('nav.services')}</span
 				>
 			</AppRailAnchor>
 			<AppRailAnchor href="/facility-management/projects" title="projects">
