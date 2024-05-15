@@ -47,6 +47,8 @@
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/dom": "1.5.4",
+		"graphql": "^16.8.1",
+		"graphql-request": "^7.0.1",
 		"gsap": "^3.12.5",
 		"nodemailer": "^6.9.9"
 	}
