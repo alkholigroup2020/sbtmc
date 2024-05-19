@@ -32,13 +32,15 @@
 		<svelte:fragment slot="lead">
 			<!-- logo -->
 			<div class="max-md:hidden">
-				<img
-					src="/images/main-landing/small-white-logo_45x45.webp"
-					srcset="/images/main-landing/small-white-logo_35x35.webp 768w, 
+				<a href="/" title="main page">
+					<img
+						src="/images/main-landing/small-white-logo_45x45.webp"
+						srcset="/images/main-landing/small-white-logo_35x35.webp 768w, 
 					/images/main-landing/small-white-logo_45x45.webp 2000w"
-					alt="Company Logo"
-					class="w-full min-w-5 max-w-8 md:min-w-8 aspect-square xl:mx-5"
-				/>
+						alt="Company Logo"
+						class="w-full min-w-5 max-w-8 md:min-w-8 aspect-square xl:mx-5"
+					/>
+				</a>
 			</div>
 
 			<!-- hamburger btn -->

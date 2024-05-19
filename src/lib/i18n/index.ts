@@ -5,6 +5,7 @@ import enFMHome from './en/fm/home-page';
 import enFMAbout from './en/fm/about-page';
 import enFMServices from './en/fm/services-page';
 import enFMProjects from './en/fm/projects-page';
+import enContactUs from './en/fm/contactUs-page';
 
 import arCommon from './ar/common';
 import arFMCommon from './ar/fm/common';
@@ -12,6 +13,7 @@ import arFMHome from './ar/fm/home-page';
 import arFMAbout from './ar/fm/about-page';
 import arFMServices from './ar/fm/services-page';
 import arFMProjects from './ar/fm/projects-page';
+import arContactUs from './ar/fm/contactUs-page';
 
 export default {
 	en: {
@@ -20,7 +22,8 @@ export default {
 		...enFMHome,
 		...enFMAbout,
 		...enFMServices,
-		...enFMProjects
+		...enFMProjects,
+		...enContactUs
 	},
 	ar: {
 		...arCommon,
@@ -28,6 +31,7 @@ export default {
 		...arFMHome,
 		...arFMAbout,
 		...arFMServices,
-		...arFMProjects
+		...arFMProjects,
+		...arContactUs
 	}
 };

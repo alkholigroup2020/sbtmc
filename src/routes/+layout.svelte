@@ -38,7 +38,7 @@
 	<title>{$t('tab.title')}</title>
 </svelte:head>
 
-<Toast position="tl" />
+<Toast position="b" />
 
 <Drawer>
 	{#if $drawerStore.id === 'facility'}
