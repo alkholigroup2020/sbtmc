@@ -73,6 +73,13 @@
 						duration: 0.2,
 						ease: 'back.inOut'
 					});
+				} else if (activeSlide === '02') {
+					activeSlide = '01';
+					gsap.to(departElement, {
+						scrollLeft: `-= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				}
 			} else if (currentBreakpoint === 'lg' || currentBreakpoint === 'xl') {
 				if (activeSlide === '01') {
@@ -189,6 +196,11 @@
 					});
 				} else if (activeSlide === '04') {
 					activeSlide = '05';
+					gsap.to(departElement, {
+						scrollLeft: `+= ${childWidth}`,
+						duration: 0.2,
+						ease: 'back.inOut'
+					});
 				}
 			} else {
 				if (activeSlide === '01') {
@@ -276,7 +288,9 @@
 		</div>
 
 		<!-- content -->
-		<div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center my-12 mx-3 md:mx-12 lg:mx-0">
+		<div
+			class="grid grid-cols-[auto_1fr_auto] gap-4 items-center my-12 mx-3 md:mx-12 lg:mx-5 2xl:mx-0"
+		>
 			<!-- Button: Left -->
 			<button type="button" aria-label="left-arrow" on:click={multiColumnLeft}>
 				<span>

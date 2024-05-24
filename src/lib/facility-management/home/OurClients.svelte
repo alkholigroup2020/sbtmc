@@ -1,6 +1,36 @@
 <script lang="ts">
 	import { t } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
+	import { onMount } from 'svelte'; // Svelte's lifecycle method
+
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
+
+	onMount(() => {
+		// Select all the images
+		const images = document.querySelectorAll('.client-logo');
+
+		// Loop through each image and create an animation
+		images.forEach((img) => {
+			gsap.fromTo(
+				img,
+				{ opacity: 0, y: 50, scale: 0.8 }, // Initial state
+				{
+					opacity: 1,
+					y: 0,
+					scale: 1,
+					duration: 1.5,
+					ease: 'power3.out',
+					scrollTrigger: {
+						trigger: img,
+						start: 'top 80%',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
+	});
 </script>
 
 <section>
@@ -32,7 +62,7 @@
 							srcset="/images/fm/home/clientsSection/aramco_300x150.webp 768w, 
 							/images/fm/home/clientsSection/aramco_400x200.webp 2000w"
 							alt="a client logo"
-							class="w-full aspect-[1/0.5]"
+							class="client-logo w-full aspect-[1/0.5]"
 						/>
 					</div>
 				</div>
@@ -45,7 +75,7 @@
 							srcset="/images/fm/home/clientsSection/neom_250x250.webp 1024w, 
 							/images/fm/home/clientsSection/neom_400x400.webp 2000w"
 							alt="a client logo"
-							class="w-full aspect-[1/1]"
+							class="client-logo w-full aspect-[1/1]"
 						/>
 					</div>
 				</div>
@@ -58,7 +88,7 @@
 							srcset="/images/fm/home/clientsSection/sports_120x120.webp 768w, 
 							/images/fm/home/clientsSection/sports_180x180.webp 2000w"
 							alt="a client logo"
-							class="aspect-[1/1] w-full"
+							class="client-logo aspect-[1/1] w-full"
 						/>
 					</div>
 				</div>
@@ -71,7 +101,7 @@
 							srcset="/images/fm/home/clientsSection/_Imam University_120x120.webp 768w, 
 							/images/fm/home/clientsSection/_Imam University_180x180.webp 2000w"
 							alt="a client logo"
-							class="w-full aspect-[1/1]"
+							class="client-logo w-full aspect-[1/1]"
 						/>
 					</div>
 				</div>
@@ -84,7 +114,7 @@
 							srcset="/images/fm/home/clientsSection/_Satco_300x150.webp 1024w, 
 							/images/fm/home/clientsSection/_Satco_400x200.webp 2000w"
 							alt="a client logo"
-							class="w-full aspect-[1/0.5]"
+							class="client-logo w-full aspect-[1/0.5]"
 						/>
 					</div>
 				</div>

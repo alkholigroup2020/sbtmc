@@ -1,6 +1,42 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { t } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
+
+	// import gsap from 'gsap';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	// gsap.registerPlugin(ScrollTrigger);
+
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
+
+	onMount(() => {
+		// Select all images inside our section
+		const images = document.querySelectorAll('section img');
+
+		// Apply GSAP animation to each image
+		images.forEach((img) => {
+			gsap.fromTo(
+				img,
+				{
+					opacity: 0, // Starting opacity
+					scale: 0.9 // Starting scale
+				},
+				{
+					opacity: 1, // Ending opacity
+					scale: 1, // Ending scale
+					duration: 1.5, // Animation duration
+					ease: 'power3.out', // Easing function
+					scrollTrigger: {
+						trigger: img, // Trigger animation when image enters viewport
+						start: 'top 80%', // Animation starts when top of the image is 80% from the top of viewport
+						toggleActions: 'play none none none' // Only play the animation once
+					}
+				}
+			);
+		});
+	});
 </script>
 
 <section>

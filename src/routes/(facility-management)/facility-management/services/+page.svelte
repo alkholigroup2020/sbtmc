@@ -1,6 +1,6 @@
 <script lang="ts">
-	import FacilityManagementIntro from '$lib/facility-management/facility-management/FacilityManagementIntro.svelte';
-	import Services from '$lib/facility-management/facility-management/Services.svelte';
+	import FacilityManagementIntro from '$lib/facility-management/services/FacilityManagementIntro.svelte';
+	import Services from '$lib/facility-management/services/Services.svelte';
 
 	import FmFooter from '$lib/facility-management/FMFooter.svelte';
 

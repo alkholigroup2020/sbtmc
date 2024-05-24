@@ -8,6 +8,10 @@
 	import ProjectsIntro from '$lib/facility-management/projects/ProjectsIntro.svelte';
 	import { ProgressRadial } from '@skeletonlabs/skeleton';
 
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
+
 	let projects: any = [];
 	let allProjectYears: string[] = [];
 	let isLoading = true; // Add a loading state
@@ -45,6 +49,29 @@
 
 	onMount(async () => {
 		await getProjectsData();
+
+		// Select all the images
+		const images = document.querySelectorAll('.project');
+
+		// Loop through each image and create an animation
+		images.forEach((img) => {
+			gsap.fromTo(
+				img,
+				{ opacity: 0, y: 50, scale: 0.8 }, // Initial state
+				{
+					opacity: 1,
+					y: 0,
+					scale: 1,
+					duration: 1.5,
+					ease: 'power3.out',
+					scrollTrigger: {
+						trigger: img,
+						start: 'top 80%',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
 	});
 
 	$: filteredProjects = projects.filter(
@@ -140,7 +167,7 @@
 			>
 				{#each filteredProjects as project}
 					<div
-						class="card bg-[#f6f6f9] hover:bg-primary-700 hover:p-1 hover:text-white rounded-none"
+						class="card bg-[#f6f6f9] hover:bg-primary-700 hover:p-1 hover:text-white rounded-none project"
 					>
 						<div>
 							<img

@@ -1,6 +1,35 @@
 <script lang="ts">
 	import { t } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
+	import { onMount } from 'svelte';
+
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
+
+	onMount(() => {
+		const fadeBlocks = document.querySelectorAll('.fade-block');
+		fadeBlocks.forEach((block) => {
+			gsap.fromTo(
+				block,
+				{
+					opacity: 1
+				},
+				{
+					opacity: 0,
+					delay: gsap.utils.random(0, 0.8, 0.1), // Random delay for each block
+					duration: 0.5,
+					ease: 'power2.inOut',
+					scrollTrigger: {
+						trigger: block,
+						start: 'top 90%',
+						end: 'bottom top',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
+	});
 </script>
 
 <section>
@@ -21,14 +50,21 @@
 
 		<!-- service #1 -->
 		<div>
-			<div class="py-5 lg:py-12">
+			<!-- Container for the image and the overlay  -->
+			<div class="relative container mx-auto py-5 lg:py-12">
 				<img
 					src="/images/fm/facility-mgmt/AService_1600x480.webp"
 					srcset="/images/fm/facility-mgmt/AService_800x400.webp 768w, 
-          /images/fm/facility-mgmt/AService_1600x480.webp 2000w"
+									/images/fm/facility-mgmt/AService_1600x480.webp 2000w"
 					alt="FACILITY MANAGEMENT, OPERATION & MAINTENANCE"
 					class="w-full aspect-[1/0.5] md:aspect-[1/0.3]"
 				/>
+				<!-- Overlay grid -->
+				<div class="grid-overlay absolute inset-0">
+					{#each Array(200) as _, i (i)}
+						<div class="fade-block" style="opacity: 0;"></div>
+					{/each}
+				</div>
 			</div>
 			<div class="px-5 lg:px-0 lg:flex">
 				<!-- title -->
@@ -57,15 +93,23 @@
 
 		<!-- service #2 -->
 		<div class="py-5 lg:py-8">
-			<div class="py-5 lg:py-12">
+			<!-- Container for the image and the overlay  -->
+			<div class="relative container mx-auto py-5 lg:py-12">
 				<img
 					src="/images/fm/facility-mgmt/BService_1600x480.webp"
 					srcset="/images/fm/facility-mgmt/BService_800x400.webp 768w, 
-          /images/fm/facility-mgmt/BService_1600x480.webp 2000w"
+									/images/fm/facility-mgmt/BService_1600x480.webp 2000w"
 					alt="Electromechanical Sector"
 					class="w-full aspect-[1/0.5] md:aspect-[1/0.3]"
 				/>
+				<!-- Overlay grid -->
+				<div class="grid-overlay absolute inset-0">
+					{#each Array(200) as _, i (i)}
+						<div class="fade-block" style="opacity: 0;"></div>
+					{/each}
+				</div>
 			</div>
+
 			<div class="px-5 lg:px-0 lg:flex">
 				<!-- title -->
 				<div class="lg:w-1/3">
@@ -92,15 +136,23 @@
 
 		<!-- service #3 -->
 		<div class="sm:pb-8 md:pb-12 lg:pb-16">
-			<div class="py-5 lg:py-12">
+			<!-- Container for the image and the overlay  -->
+			<div class="relative container mx-auto py-5 lg:py-12">
 				<img
 					src="/images/fm/facility-mgmt/CService_1600x480.webp"
 					srcset="/images/fm/facility-mgmt/CService_800x400.webp 768w, 
-          /images/fm/facility-mgmt/CService_1600x480.webp 2000w"
+									/images/fm/facility-mgmt/CService_1600x480.webp 2000w"
 					alt="TECHNOLOGIES IN THE MAINTENANCE SECTOR"
 					class="w-full aspect-[1/0.5] md:aspect-[1/0.3]"
 				/>
+				<!-- Overlay grid -->
+				<div class="grid-overlay absolute inset-0">
+					{#each Array(200) as _, i (i)}
+						<div class="fade-block" style="opacity: 0;"></div>
+					{/each}
+				</div>
 			</div>
+
 			<div class="px-5 lg:px-0 lg:flex">
 				<!-- title -->
 				<div class="lg:w-1/3">
@@ -165,3 +217,20 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.grid-overlay {
+		display: grid;
+		/* Adjust the number of columns based on your preference */
+		grid-template-columns: repeat(20, 1fr);
+		/* Adjust the number of rows based on your preference */
+		grid-template-rows: repeat(10, 1fr);
+		height: 100%;
+	}
+	.fade-block {
+		background-color: #e4e4e4;
+		width: 100%;
+		height: 100%;
+		transition: opacity 0s ease-in-out;
+	}
+</style>

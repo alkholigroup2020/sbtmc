@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { t } from '$lib/i18n/translator';
-	import { currentAppLang } from '$lib/stores';
 </script>
 
 <section class="bg-surface-500 pt-24 md:pt-16 lg:pt-12 text-white">

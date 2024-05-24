@@ -83,6 +83,7 @@
 			// Start the animation
 			gsap.to(node, {
 				y: 0, // Move to original position
+				opacity: 1, // my addition - to make the buttons hidden initially
 				autoAlpha: 1, // Fade in
 				delay, // Start animation after a delay
 				duration: 0.8, // Duration of the animation
@@ -109,10 +110,12 @@
 	}
 
 	let fadeFromBottomActions: any[] = []; // Store references to the actions
+
 	// When the language changes, re-trigger the button animations
 	$: if ($currentAppLang) {
 		fadeFromBottomActions.forEach((action) => action.runAnimation());
 	}
+
 	// Use this function in the `use` directive to capture the action reference
 	function registerFadeFromBottomAction(node: HTMLElement, params = {}) {
 		const action = fadeFromBottom(node, params);
@@ -166,8 +169,8 @@
 			<!-- title -->
 			<div
 				class="uppercase text-center text-white {$currentAppLang === 'en'
-					? 'en-landing-title mb-14 sm:mb-14 md:mb-16 2xl:mb-16 text-[12vw] min-[500px]:text-[9vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
-					: 'ar-landing-title mb-12 min-[400px]:mb-20 md:mb-24 xl:mb-24 text-[11vw] min-[500px]:text-[9vw] md:text-[8vw] lg:text-[7vw] xl:text-[5vw] 2xl:text-7xl'}"
+					? 'en-landing-title mb-14 sm:mb-14 md:mb-16 text-[12vw] min-[500px]:text-[9vw] md:text-[7vw] lg:text-[6vw] 2xl:text-8xl'
+					: 'ar-landing-title mb-12 min-[400px]:mb-20 md:mb-24 text-[11vw] min-[500px]:text-[9vw] md:text-[8vw] lg:text-[7vw] xl:text-[5vw] 2xl:text-7xl'}"
 			>
 				<div
 					class=" {$currentAppLang === 'en'
@@ -188,7 +191,7 @@
 			</div>
 
 			<!-- Buttons -->
-			<div class="grid md:grid-cols-2 md:gap-8 space-y-6 md:space-y-0">
+			<div class="grid md:grid-cols-2 md:gap-8 2xl:gap-12 space-y-6 md:space-y-0">
 				<div use:registerFadeFromBottomAction={{ delay: 2.8 }}>
 					<a href="/construction">
 						<button

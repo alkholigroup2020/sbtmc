@@ -1,6 +1,37 @@
 <script lang="ts">
 	import { t } from '$lib/i18n/translator';
 	import { currentAppLang } from '$lib/stores';
+
+	import { onMount } from 'svelte'; // Svelte's lifecycle method
+
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
+
+	onMount(() => {
+		// Select all the images
+		const images = document.querySelectorAll('.iso-logo');
+
+		// Loop through each image and create an animation
+		images.forEach((img) => {
+			gsap.fromTo(
+				img,
+				{ opacity: 0, y: 50, scale: 0.8 }, // Initial state
+				{
+					opacity: 1,
+					y: 0,
+					scale: 1,
+					duration: 1.5,
+					ease: 'power3.out',
+					scrollTrigger: {
+						trigger: img,
+						start: 'top 80%',
+						toggleActions: 'play none none none'
+					}
+				}
+			);
+		});
+	});
 </script>
 
 <section>
@@ -30,7 +61,7 @@
 					srcset="/images/fm/about/isoSection/BV_Certification_ISO_200x100.webp 768w, 
           /images/fm/about/isoSection/BV_Certification_ISO_300x150.webp 2000w"
 					alt="iso logo"
-					class="w-full aspect-[1/0.5] py-2"
+					class="w-full aspect-[1/0.5] py-2 iso-logo"
 				/>
 			</div>
 
@@ -40,7 +71,7 @@
 					srcset="/images/fm/about/isoSection/bicsc_200x100.webp 768w, 
           /images/fm/about/isoSection/bicsc_300x150.webp 2000w"
 					alt="iso logo"
-					class="w-full aspect-[1/0.5] py-2"
+					class="w-full aspect-[1/0.5] py-2 iso-logo"
 				/>
 			</div>
 
@@ -50,7 +81,7 @@
 					srcset="/images/fm/about/isoSection/UKAS_200x100.webp 768w, 
           /images/fm/about/isoSection/UKAS_300x150.webp 2000w"
 					alt="iso logo"
-					class="w-full aspect-[1/0.5]"
+					class="w-full aspect-[1/0.5] iso-logo"
 				/>
 			</div>
 
@@ -60,7 +91,7 @@
 					srcset="/images/fm/about/isoSection/BV_Certification_ISO14001_200x100.webp 768w, 
           /images/fm/about/isoSection/BV_Certification_ISO14001_300x150.webp 2000w"
 					alt="iso logo"
-					class="w-full aspect-[1/0.5] py-2"
+					class="w-full aspect-[1/0.5] py-2 iso-logo"
 				/>
 			</div>
 
@@ -70,7 +101,7 @@
 					srcset="/images/fm/about/isoSection/BV_Cert_ISO_200x100.webp 768w, 
           /images/fm/about/isoSection/BV_Cert_ISO_300x150.webp 2000w"
 					alt="iso logo"
-					class="w-full aspect-[1/0.5] py-2"
+					class="w-full aspect-[1/0.5] py-2 iso-logo"
 				/>
 			</div>
 		</div>

@@ -9,6 +9,36 @@
 	import type { PageData } from './$types';
 	export let data: PageData;
 	const formData = data.form;
+
+	import { onMount } from 'svelte';
+
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
+
+	onMount(() => {
+		// const fadeBlocks = document.querySelectorAll('.fade-block');
+		// fadeBlocks.forEach((block) => {
+		// 	gsap.fromTo(
+		// 		block,
+		// 		{
+		// 			opacity: 1
+		// 		},
+		// 		{
+		// 			opacity: 0,
+		// 			delay: gsap.utils.random(0, 0.5, 0.1), // Random delay for each block
+		// 			duration: 0.5,
+		// 			ease: 'power2.inOut',
+		// 			scrollTrigger: {
+		// 				trigger: block,
+		// 				start: 'top bottom',
+		// 				end: 'bottom top',
+		// 				toggleActions: 'play none none none'
+		// 			}
+		// 		}
+		// 	);
+		// });
+	});
 </script>
 
 <div class="flex justify-center">
@@ -34,25 +64,48 @@
 		<AboutUs />
 		<FactsAboutUs />
 
-		<!-- image of two engineers -->
-		<div class="py-5 md:py-14 container mx-auto">
+		<!-- Container for the image and the overlay  -->
+		<div class="relative container mx-auto my-5 md:my-14">
 			<img
 				src="/images/fm/about/two-engineers_1600x400.webp"
 				srcset="/images/fm/about/two-engineers_800x400.webp 768w, 
-				/images/fm/about/two-engineers_1600x400.webp 2000w"
+							/images/fm/about/two-engineers_1600x400.webp 2000w"
 				alt="two working engineers"
-				class="w-full aspect-[1/0.5] md:aspect-[1/0.25]"
+				class="w-full aspect-[1/0.5] md:aspect-[1/0.3]"
 			/>
+			<!-- Overlay grid -->
+			<div class="grid-overlay absolute inset-0">
+				{#each Array(200) as _, i (i)}
+					<div class="fade-block" style="opacity: 0;"></div>
+				{/each}
+			</div>
 		</div>
+
 		<div class="-mt-28">
 			<VisionAndMission />
 		</div>
 
 		<IsoLogos />
-		<!-- <div class="w-full h-[100px]"></div> -->
 
 		<OurClients />
 
 		<FmFooter {formData} />
 	</div>
 </div>
+
+<style>
+	.grid-overlay {
+		display: grid;
+		/* Adjust the number of columns based on your preference */
+		grid-template-columns: repeat(20, 1fr);
+		/* Adjust the number of rows based on your preference */
+		grid-template-rows: repeat(10, 1fr);
+		height: 100%;
+	}
+	.fade-block {
+		background-color: #e4e4e4;
+		width: 100%;
+		height: 100%;
+		transition: opacity 0.5s ease-in-out;
+	}
+</style>
