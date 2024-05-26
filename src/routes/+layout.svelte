@@ -30,6 +30,7 @@
 	import { navigating } from '$app/stores';
 	import LoadingSpinner from '$lib/LoadingSpinner.svelte';
 	import DrawerLinksFm from '$lib/facility-management/navigation/DrawerLinksFM.svelte';
+	import DrawerLinksCs from '$lib/construction/navigation/DrawerLinksCS.svelte';
 
 	$: devOrProduction = process.env.NODE_ENV === 'development' ? true : false;
 </script>
@@ -43,6 +44,8 @@
 <Drawer>
 	{#if $drawerStore.id === 'facility'}
 		<DrawerLinksFm />
+	{:else}
+		<DrawerLinksCs />
 	{/if}
 </Drawer>
 

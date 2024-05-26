@@ -52,7 +52,7 @@
 		<!-- clients logos -->
 		<div class="flex flex-col">
 			<div
-				class="grid grid-cols-2 min-[300px]:grid-cols-3 md:grid-cols-5 min-[300px]:gap-x-3 py-3 px-3 md:px-0 xl:px-48"
+				class="grid grid-cols-2 min-[300px]:grid-cols-3 md:grid-cols-5 min-[300px]:gap-x-3 py-3 px-3 md:px-0 xl:px-48 pt-10"
 			>
 				<!-- aramco -->
 				<div class="flex flex-col items-center justify-center">

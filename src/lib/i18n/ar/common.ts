@@ -7,5 +7,11 @@ export default {
 	'landing.btn2': 'إدارة المنشآت',
 	'landing.footer.question': 'لديك سؤال؟',
 	'landing.footer.placeholder': 'أكتب سؤالك هنا ...',
-	'landing.footer.successMSG': 'شكراً لرسالتك!'
+	'landing.footer.successMSG': 'شكراً لرسالتك!',
+	'nav.home': 'الرئيسية',
+	'nav.about': 'عن الشركة',
+	'nav.services': 'الخدمات',
+	'nav.construction': 'التشـييد',
+	'nav.projects': 'مشروعاتنا',
+	'nav.contact': 'اتصل بنا'
 };
