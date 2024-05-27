@@ -2,6 +2,7 @@ import enCommon from './en/common';
 import enFMHome from './en/fm/home-page';
 import enCSHome from './en/cs/home-page';
 import enFMAbout from './en/fm/about-page';
+import enCSAbout from './en/cs/about-page';
 import enFMServices from './en/fm/services-page';
 import enFMProjects from './en/fm/projects-page';
 import enContactUs from './en/fm/contactUs-page';
@@ -10,6 +11,7 @@ import arCommon from './ar/common';
 import arFMHome from './ar/fm/home-page';
 import arCSHome from './ar/cs/home-page';
 import arFMAbout from './ar/fm/about-page';
+import arCSAbout from './ar/cs/about-page';
 import arFMServices from './ar/fm/services-page';
 import arFMProjects from './ar/fm/projects-page';
 import arContactUs from './ar/fm/contactUs-page';
@@ -20,6 +22,7 @@ export default {
 		...enFMHome,
 		...enCSHome,
 		...enFMAbout,
+		...enCSAbout,
 		...enFMServices,
 		...enFMProjects,
 		...enContactUs
@@ -29,6 +32,7 @@ export default {
 		...arFMHome,
 		...arCSHome,
 		...arFMAbout,
+		...arCSAbout,
 		...arFMServices,
 		...arFMProjects,
 		...arContactUs
