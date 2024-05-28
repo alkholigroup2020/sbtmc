@@ -20,7 +20,7 @@
 
 	const getProjectsData = async () => {
 		try {
-			const response = await fetch('/api/projects/');
+			const response = await fetch('/api/fm-projects/');
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}

@@ -30,7 +30,7 @@
 					ease: 'power3.out', // Easing function
 					scrollTrigger: {
 						trigger: img, // Trigger animation when image enters viewport
-						start: 'top 80%', // Animation starts when top of the image is 80% from the top of viewport
+						start: 'top 75%', // Animation starts when top of the image is 80% from the top of viewport
 						toggleActions: 'play none none none' // Only play the animation once
 					}
 				}
