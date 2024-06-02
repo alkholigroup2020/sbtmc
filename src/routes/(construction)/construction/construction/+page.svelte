@@ -1,11 +1,10 @@
 <script lang="ts">
-	import FacilityManagementIntro from '$lib/facility-management/services/FacilityManagementIntro.svelte';
-	import Services from '$lib/facility-management/services/Services.svelte';
-
-	import FmFooter from '$lib/facility-management/FMFooter.svelte';
-
 	import type { PageData } from './$types';
 	import CsFooter from '$lib/construction/CSFooter.svelte';
+	import ConstructionIntro from '$lib/construction/construction/ConstructionIntro.svelte';
+	import Services from '$lib/construction/construction/Services.svelte';
+	import Departments from '$lib/construction/construction/Departments.svelte';
+
 	export let data: PageData;
 	const formData = data.form;
 </script>
@@ -30,7 +29,13 @@
 			</div>
 		</div>
 
-		<div class="h-[300px]"></div>
+		<ConstructionIntro />
+
+		<Departments />
+
+		<Services />
+
+		<div class="h-[100px]"></div>
 
 		<CsFooter {formData} />
 	</div>

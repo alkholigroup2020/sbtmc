@@ -52,8 +52,21 @@
 		<!-- clients logos -->
 		<div class="flex flex-col">
 			<div
-				class="grid grid-cols-2 min-[300px]:grid-cols-3 md:grid-cols-5 min-[300px]:gap-x-3 py-3 px-3 md:px-0 xl:px-48 pt-10"
+				class=" grid grid-cols-2 min-[300px]:grid-cols-3 md:grid-cols-5 min-[300px]:gap-x-3 py-3 px-3 md:px-0 xl:px-48 pt-10"
 			>
+				<!-- Imam University -->
+				<div class="flex flex-col items-center justify-center">
+					<div class="w-full p-[30%]">
+						<img
+							src="/images/fm/home/clientsSection/_Imam University_180x180.webp"
+							srcset="/images/fm/home/clientsSection/_Imam University_120x120.webp 768w, 
+						/images/fm/home/clientsSection/_Imam University_180x180.webp 2000w"
+							alt="a client logo"
+							class="client-logo w-full aspect-[1/1]"
+						/>
+					</div>
+				</div>
+
 				<!-- aramco -->
 				<div class="flex flex-col items-center justify-center">
 					<div class="w-full p-[8%] sm:p-[5%]">
@@ -67,52 +80,39 @@
 					</div>
 				</div>
 
-				<!-- neom -->
-				<div class="flex flex-col items-center justify-center">
-					<div class="w-full p-[20%]">
-						<img
-							src="/images/fm/home/clientsSection/neom_400x400.webp"
-							srcset="/images/fm/home/clientsSection/neom_250x250.webp 1024w, 
-							/images/fm/home/clientsSection/neom_400x400.webp 2000w"
-							alt="a client logo"
-							class="client-logo w-full aspect-[1/1]"
-						/>
-					</div>
-				</div>
-
 				<!-- sports -->
 				<div class="flex flex-col items-center justify-center">
-					<div class="w-full p-[22%]">
+					<div class="w-full p-[10%]">
 						<img
-							src="/images/fm/home/clientsSection/sports_180x180.webp"
-							srcset="/images/fm/home/clientsSection/sports_120x120.webp 768w, 
-							/images/fm/home/clientsSection/sports_180x180.webp 2000w"
+							src="/images/fm/home/clientsSection/Sports-T_400x400.webp"
+							srcset="/images/fm/home/clientsSection/Sports-T_250x250.webp 768w, 
+							/images/fm/home/clientsSection/Sports-T_400x400.webp 2000w"
 							alt="a client logo"
 							class="client-logo aspect-[1/1] w-full"
 						/>
 					</div>
 				</div>
 
-				<!-- Imam University -->
+				<!-- neom -->
 				<div class="flex flex-col items-center justify-center">
-					<div class="w-full p-[30%]">
+					<div class="w-full p-[16%]">
 						<img
-							src="/images/fm/home/clientsSection/_Imam University_180x180.webp"
-							srcset="/images/fm/home/clientsSection/_Imam University_120x120.webp 768w, 
-							/images/fm/home/clientsSection/_Imam University_180x180.webp 2000w"
+							src="/images/fm/home/clientsSection/Neom-T_400x400.webp"
+							srcset="/images/fm/home/clientsSection/Neom-T_250x250.webp 1024w, 
+						/images/fm/home/clientsSection/Neom-T_400x400.webp 2000w"
 							alt="a client logo"
 							class="client-logo w-full aspect-[1/1]"
 						/>
 					</div>
 				</div>
 
-				<!-- Satco -->
+				<!-- almajdouie -->
 				<div class="flex flex-col items-center justify-center">
-					<div class="w-full p-[15%]">
+					<div class="w-full p-[20%]">
 						<img
-							src="/images/fm/home/clientsSection/_Satco_400x200.webp"
-							srcset="/images/fm/home/clientsSection/_Satco_300x150.webp 1024w, 
-							/images/fm/home/clientsSection/_Satco_400x200.webp 2000w"
+							src="/images/fm/home/clientsSection/almajdouie_400x200.webp"
+							srcset="/images/fm/home/clientsSection/almajdouie_300x150.webp 1024w, 
+							/images/fm/home/clientsSection/almajdouie_400x200.webp 2000w"
 							alt="a client logo"
 							class="client-logo w-full aspect-[1/0.5]"
 						/>
